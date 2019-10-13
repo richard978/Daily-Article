@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>上传头像</title>
+<style>
+    p {font-size:20px}
+    #div1{
+        position:relative;
+        width:300px;
+        height:475px;
+        margin:0 auto;
+    }
+    #imgDiv{
+        position:absolute;
+        left:25px;
+        top:125px;
+        width:250px;
+        height:250px;
+        border:2px dashed gray;
+        border-radius:20px;
+        background-image:url('plus.jpg');
+        background-size:cover;
+        opacity:0.5;
+    }
+    #image1{width:250px;height:250px;border-radius:15px;}
+    #showImg{
+        position:absolute;
+        top:400px;
+        left:40px;
+    }
+    #btn{
+        position:absolute;
+        top:450px;
+        left:80px;
+    }
+    #yes{margin-right:25px;}
+    #bg{
+        position:absolute;
+        height:100%;
+        width:100%;
+        background-image:url('images/bg19.jpg');
+        background-size:100% 100%;
+        background-attachment:fixed;
+    }
+</style>
+<script type="text/javascript">
+    if (typeof FileReader == 'undefined'){
+        alert("当前浏览器不支持图片预览！");
+        document.getElementById("showImg").setAttribute("disabled","disabled");
+    }
+    var reader = new FileReader();
+    var imgSrc = null;
+    function preview(obj){
+        var file = obj.files[0];
+        //var reader = new FileReader();
+        reader.onload = function (e) {
+            var img = document.getElementById("image1");
+            var div = document.getElementById("imgDiv");
+            img.src = e.target.result;
+            imgSrc = img.src;
+            img.style.display = 'block'; 
+            div.style.opacity = '1'; 
+            div.style.border = '1px solid gray';
+        }
+        reader.readAsDataURL(file);
+    }
+    function cancel(){
+        var img = document.getElementById("image1");
+        var div = document.getElementById("imgDiv");
+        img.src = "";
+        showImg.value = "";
+        img.style.display = 'none';
+        div.style.opacity = '0.5';
+        div.style.border = '2px dashed gray';
+    }
+    function submit1(){
+        var form1 = document.getElementById("f1");
+        var img = document.getElementById("image1");
+        if(img.src!=imgSrc){
+            alert("请上传图片！");
+            return false;
+        }
+    }
+</script>
+</head>
+<body>
+    <div id="bg"></div>
+    <div id="div1">
+        <div id="imgDiv"> 
+            <img id="image1"/>
+        </div>
+        <form name="fileupload" id="f1" action="uploadImage.jsp" method="POST" enctype="multipart/form-data"
+            onsubmit="return submit1()">
+            <input type="file" name="image" id="showImg" onchange="preview(this)" accept="image/*" size=24>
+            <div id="btn">
+                <input type="submit" id="yes" value="确认">
+                <button type="button" id="no" onclick="cancel()">取消</button>
+                
+            </div>
+        </form>
+        <a href="user.jsp" style="color:black;position:absolute;top:500px;left:130px;">返回</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+*{
+        box-sizing:content-box;/* 伸缩项目自动box-sizing:border-box，所以需调整为content-box */
+        margin:0;
+        padding:0;
+    }
+    body{
+    	min-width:1000px;
+        display:flex;
+        flex-direction:column;/* 头、中部、脚纵向显示 */
+    }
+    header,footer{
+        flex:0 0 100px;/* 头、脚尺寸固定，不放大、不缩小 */
+        display:flex;
+        align-items:center;
+        background-size:100% 1px;
+        
+    }
+    ul{
+    	list-style: none;
+    }
+    .main{
+        display:flex;
+        flex:1;
+    }
+   .content{
+        min-height:1000px;
+        flex:1;
+   }
+   .left{
+        flex:0 0 330px;/* 左右两列固定宽 */
+        border-right:1px black solid;
+        background-color:#f5f6f7;
+   }
+   .left-nav{
+   		width:250px;
+   		margin-left:auto;
+   		margin-right:auto;
+   		margin-top:20px;
+   		padding:10px;
+   		margin-bottom: 8px;
+	    background-color: #fff;
+	    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+	    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.1);
+   }
+   .left-nav-title{
+      	padding: 16px 16px 0;
+	    font-size: 14px;
+	    color: #333;
+   }
+   .left-nav-title:before{
+   	    display: inline-block;
+	    margin-right: 4px;
+	    border-radius:4px;
+	    content: '';
+	    width: 8px;
+	    height: 18px;
+	    vertical-align: -6px;
+	    background-color: #858585;
+   }
+   .left-nav-content{
+	   	padding: 16px;
+	    overflow: hidden;
+   }
+   .right{
+        flex:0 0 200px;/* 左右两列固定宽 */
+        border-left:1px black solid;
+   }
+   .left{
+        order:-1;/* 让left居于左侧 */
+   }
+   .bk{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    background-color:#CCC;
+    opacity: 0.8;
+   		
+   }
+   
+   .ylcon{width:100%;min-width:320px;background-color:#f5f6f7;border-radius:3px;}
+	.tit{height:26px;line-height:26px;padding:0px 15px;position:relative;font-size:15px;color:#aaa;border-bottom:1px solid rgba(0, 0, 0, 0.15);}
+	 
+	.story{border-bottom:1px dashed #cecece;padding:0 15px 3px;position:relative;}
+	.story_t{font-size:1.2em;color:rgba(0,0,0,1);padding-top:5px;padding-bottom:2px;}
+	.story_m{color:rgba(110,110,110,1);line-height:21px;word-break:break-all;word-wrap:break-word;overflow:hidden;font-size:1.2em;padding:2px 0;}
+	.story_time{color:rgba(154,154,154,1);padding:2px 0;}
+	.story_hf{background:rgb(245,245,245);font-size:1.2em;border:1px solid rgba(204,204,204,0.2);border-radius:2px;color:rgba(110,110,110,1);padding:4px;margin-bottom:5px;}
+	.opbtn{position:absolute;top: 0;right: 0;}
+   #icon{
+   		margin-left:50px;
+   		width:100%
+   }
+   #func{
+   		width:300px;
+   		margin-bottom:10px;
+   		align-self:flex-end;
+   		cursor:pointer;
+   }
+   #content{
+   		background-size:cover;
+   }
+   #user-msg{
+   		margin: 30px;
+   		text-align:center;
+   }
+   #user-msg img{
+   		width:70px;
+   		height:100px;
+   		display:inline-block;
+   }
+   #user-msg p{
+   		line-height: 30px;
+   		font-family: "SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    	font-size: 1.2em;
+    	font-weight:bold;
+   }
+   #main-text{
+   		width:700px;
+   		margin-left:auto;
+   		margin-right:auto;
+   		margin-top:50px;
+   		border-radius:3px 3px 3px 3px;
+   		box-shadow:0 0 2px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(0, 0, 0, 0.5), 0 3px 0 #FFFFFF, 
+   				   0 4px 0 rgba(0, 0, 0, 0.5), 0 6px 0 #FFFFFF, 0 7px 0 rgba(0, 0, 0, 0.5);
+   	 	padding:80px 50px 10px;
+   	 	background-color:#f5f6f7;
+   }
+   #main-text #title{
+   		color: #000000;
+	    font-weight: normal;
+	    letter-spacing: 4px;
+	    margin: 0 0 30px;
+	    position: relative;
+	    text-align: center;
+	    text-transform: uppercase;
+	    font-family: Oswald,arial,Georgia, serif;
+   }
+   #main-text #author{
+	    font-size: 16px;
+	    font-weight: normal;
+	    line-height: 15px;
+	    color: #666;
+	    margin: 20px 0 20px;
+	    padding-left:10em;
+	    text-align: center;
+   }
+   #artical{
+   	display:block;
+   }
+   #artical p{
+	   	color: #000;
+	    font-size: 16px;
+	    font-weight: normal;
+	    line-height: 30px;
+	    text-indent:2em;
+	    margin-bottom: 30px;
+	    text-align: justify;
+	    display: block;
+   }
+   #random{
+   		margin:80px 10px 10px 10px;
+   }
+   #random span:last-child{
+   		float:right;
+   }
+   #comment{
+   		width:800px;
+   		margin-left:auto;
+   		margin-right:auto;
+   		margin-top:50px;
+   }
+   #comment textarea{
+   		color: #333;
+	    font-size: 16px;
+	    font-weight: normal;
+	    line-height: 30px;
+	    margin-bottom: 30px;
+	    text-align: justify;
+	    display: block;
+   }

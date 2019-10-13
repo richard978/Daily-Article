@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>上传文章</title>
+<style>
+    p {font-size:20px}
+    #shadow {position:absolute;display:block;top:0;left:0;z-index:80;
+           background-color:gray;opacity:0.5;}
+    #hideShadow {position:absolute;z-index:900;left:230px;top20px}
+    #okBtn{
+        position:absolute;
+        top:300px;
+        left:200px;
+        height:100px;
+        width:100px;
+    }
+    #div1{
+        position:fixed;
+        width:300px;
+        height:200px;
+        background-image:url('bg2.jpg');
+        background-size:100% 100%;
+        visibility:hidden;
+        z-index:999;
+        border:1px solid;
+        box-shadow:5px 5px 1px #808080;
+    }
+    #title{
+        position:absolute;
+        top:0px;
+        left:0px;
+        display:inline-block;
+        width:270px;
+        height:23px;
+        background-color:rgb(221,221,221);
+        border-bottom:1px solid;
+        border-right:1px solid;
+        padding-left:5px;
+        padding-top:5px;
+        font-size:95%;
+    }
+    #close{
+        position:absolute;
+        top:0px;
+        right:0px;
+        display:inline-block;
+        height:25px;
+        width:28px;
+        background-color:rgb(175,175,175);
+        border-bottom:1px solid;
+        border-left:1px solid;
+        text-align:center;
+        padding-top:3px;
+        font-size:95%;
+    }
+    #close:hover{cursor:pointer}
+    #showTxt{
+        position:absolute;
+        top:70px;
+        left:40px;
+    }
+    #btn{
+        position:absolute;
+        top:145px;
+        left:80px;
+    }
+    #yes{margin-right:50px;}
+</style>
+<script type="text/javascript">
+    function pos(){
+        var msgbox=document.getElementById("div1");
+        msgbox.style.left = (document.documentElement.clientWidth/2-msgbox.clientWidth/2)+"px"
+        msgbox.style.top = (document.documentElement.clientHeight/2-msgbox.clientHeight/2)+"px"
+        msgbox.style.visibility = "visible";
+    }
+    function showShadow(){
+        var shadow=document.getElementById("shadow");
+        shadow.style.width= ""+document.documentElement.scrollWidth+"px";
+        if(document.documentElement.clientHeight>document.documentElement.scrollHeight)
+            shadow.style.height=""+document.documentElement.clientHeight+"px";
+        else
+            shadow.style.height=""+document.documentElement.scrollHeight+"px";
+        shadow.style.display="block";
+    }
+
+    function hideShadow(){
+        var msgbox=document.getElementById("div1");
+        msgbox.style.visibility="hidden";
+        var shadow=document.getElementById("shadow");
+        shadow.style.display="none";
+    }
+    function showWindow(){
+        pos();
+        showShadow();
+    }
+</script>
+</head>
+<body>
+    <div id="shadow"></div>
+    <input type="button" id="okBtn" onclick="showWindow()" value="ok">
+    <div id="div1">
+        <div id="title">文件上传</div>
+        <div id="close" onclick="hideShadow()">X</div>
+        <form name="fileupload" id="f1" action="uploadTxt.jsp" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="showTxt" accept="text/plain" size=24>
+            <div id="btn">
+                <input type="submit" id="yes" value="确认">
+                <button type="button" id="no" onclick="hideShadow()">取消</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

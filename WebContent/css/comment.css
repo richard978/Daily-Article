@@ -1,0 +1,86 @@
+@charset "UTF-8";
+.commentguest{  
+    width: 3em;  
+    height: 3em;  
+    top: 3.2em;  
+    position: relative;  
+}  
+.commentguest img{  
+    width:100%;  
+    height: auto;  
+}  
+.comment-input{  
+        transition: all 0.5s ease 0s;  
+        font-family: "微软雅黑";  
+        font-size: 1.1em;  
+        position: relative;  
+        left: 3.1em;  
+}  
+.commentarea{  
+    position:absolute;   
+    padding: 0.6em 1em;  
+    border: 0.1em solid black;  
+    background: #fff none repeat scroll 0 0;  
+    width:40.2em; 
+    height:2em; 
+    z-index: 2;   
+}  
+.commentarea textarea{  
+    border: 0 none;  
+    display: block;  
+    outline: 0 none;  
+    resize: none;  
+    width:38em;  
+    height: 2em;  
+      
+}  
+.comment-input:hover .commentarea{  
+    height: 11.37em;  
+}  
+.comment-input:hover .commentarea textarea{  
+    height:7em;  
+}  
+.comment-input:hover .commentbtn{  
+    top:6em;  
+    z-index: 3;  
+}  
+.commentbtn{  
+    border: 0 none;  
+    bottom: 2em;  
+    height: 3.3em;  
+    padding: 0;  
+    left: 8.3em;  
+    width:33.9em;  
+    position: relative;  
+    transition:top 0.1s ease 0s;  
+  
+}  
+.commentmask{  
+    border: 0 none;  
+    top:2em;  
+    height: 100%;  
+    padding: 0;  
+    right: 0;  
+    width:33.9em;  
+    background-color: #f4f5f6;  
+    position: relative;  
+    z-index: 1;  
+}  
+.getcomment{  
+    width:6em;  
+    float: right;  
+    bottom: 1.1em;  
+    position: relative;  
+    width:6.7em;  
+    height: 100%;  
+    z-index:3;  
+    background-color:#3f404c;  
+    color: #fff;  
+    line-height: 1.9em;  
+    text-align: center;  
+    font-size: 1.1em;  
+}  
+.getcomment:hover{  
+    background-color: #AC2925;  
+    color: #fff;  
+}
